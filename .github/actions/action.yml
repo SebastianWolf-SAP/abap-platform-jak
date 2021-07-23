@@ -1,0 +1,41 @@
+name: "Calculate Fosstars rating"
+description: "The action calculates a security or OSS rules of play rating for a project. It outputs a report in Markdown format and an SVG badge."
+inputs:
+  rating:
+    description: "The rating that is used for the Fosstars report, either 'security' or 'oss-rules-of-play'"
+    required: true
+    default: security
+  report-branch:
+    description: "A branch where the report is stored"
+    required: true
+    default: fosstars
+  report-file:
+    description: "A file name where the report is stored"
+    required: false
+  badge-file:
+    description: "A file name where the badge is stored"
+    required: false
+  fosstars-version:
+    description: "A version of Fosstars"
+    required: true
+    default: v1.4.0
+  token:
+    description: "A GitHub token for accessing the repository"
+    required: true
+  data-provider-config-urls:
+    description: "A list of YAML config file URLs for data providers, format: ProviderClassName.yaml"
+    required: false
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.rating }}
+    - ${{ inputs.report-branch }}
+    - ${{ inputs.report-file }}
+    - ${{ inputs.badge-file }}
+    - ${{ inputs.fosstars-version }}
+    - ${{ inputs.token }}
+    - ${{ inputs.data-provider-config-urls }}
+branding:
+  icon: 'award'  
+  color: 'green'
