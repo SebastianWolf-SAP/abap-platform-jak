@@ -55,7 +55,7 @@ fi
 cd ..
 
 if [ "$RATING" == "oss-rules-of-play" ] && [ "$DATA_PROVIDER_CONFIGS" == "" ]; then
-    DATA_PROVIDER_CONFIG_BASE_URL="https://raw.githubusercontent.com/SAP/fosstars-rating-core-action/main/rop-sap-defaults/"
+    DATA_PROVIDER_CONFIG_BASE_URL="https://raw.githubusercontent.com/SebastianWolf-SAP/fosstars-rating-core-action/main/rop-sap-defaults/"
     DATA_PROVIDER_CONFIG_URLS[0]="${DATA_PROVIDER_CONFIG_BASE_URL}LicenseInfo.config.yml"
     DATA_PROVIDER_CONFIG_URLS[1]="${DATA_PROVIDER_CONFIG_BASE_URL}ContributingGuidelineInfo.config.yml"
     DATA_PROVIDER_CONFIG_URLS[2]="${DATA_PROVIDER_CONFIG_BASE_URL}ReadmeInfo.config.yml"
@@ -110,7 +110,7 @@ if [ "$RATING" == "oss-rules-of-play" ]; then
     esac
 fi
 
-wget -O $BADGE_FILE https://raw.githubusercontent.com/SAP/fosstars-rating-core-action/main/images/$prefix-fosstars-$suffix.svg
+wget -O $BADGE_FILE https://raw.githubusercontent.com/SebastianWolf-SAP/fosstars-rating-core-action/main/images/$prefix-fosstars-$suffix.svg
 git add $BADGE_FILE
 
 # Commit the report and the badge
