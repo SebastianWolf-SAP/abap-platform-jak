@@ -102,7 +102,7 @@ fi
 if [ "$RATING" == "oss-rules-of-play" ]; then
     prefix="rop"
     case $label in
-        passed|passed_with_warnings|failed|unclear)
+        "passed"|"passed_with_warnings"|"failed"|"unclear")
         suffix=$label
         ;;
         *)
