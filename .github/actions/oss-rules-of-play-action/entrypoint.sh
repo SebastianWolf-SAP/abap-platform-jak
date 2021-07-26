@@ -31,7 +31,8 @@ if [ "$BADGE_FILE" = "" ]; then
     BADGE_FILE="fosstars_badge.svg"
 fi
 
-PROJECT_SCM_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY
+#PROJECT_SCM_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY
+PROJECT_SCM_URL=https://github.com/SebastianWolf-SAP/gologger
 RAW_RATING_FILE="fosstars_rating.json"
 
 # Switch to the branch where the report should be stored
