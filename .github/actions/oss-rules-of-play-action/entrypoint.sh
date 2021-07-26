@@ -85,7 +85,7 @@ java -jar fosstars-rating-core/target/fosstars-github-rating-calc.jar \
 git add $REPORT_FILE $RAW_RATING_FILE
 
 # Update the current badge
-label=$(cat $RAW_RATING_FILE | jq -r .label[1] | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+label=$(cat $RAW_RATING_FILE | jq -r .label[1] | tr '[:upper:]' '[:lower:]' | sed 's/ //g')
 
 if [ "$RATING" == "security" ]; then
     prefix="security"
@@ -102,7 +102,7 @@ fi
 if [ "$RATING" == "oss-rules-of-play" ]; then
     prefix="rop"
     case $label in
-        passed|passed-with-warnings|failed|unclear)
+        passed|passed_with_warnings|failed|unclear)
         suffix=$label
         ;;
         *)
