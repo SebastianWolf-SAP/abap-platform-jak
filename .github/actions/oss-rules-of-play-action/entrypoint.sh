@@ -86,6 +86,8 @@ git add $REPORT_FILE $RAW_RATING_FILE
 
 # Update the current badge
 label=$(cat $RAW_RATING_FILE | jq -r .label[1] | tr '[:upper:]' '[:lower:]' | sed 's/ //g')
+echo "Label: $label"
+echo "Rating: $RATING"
 
 if [ "$RATING" == "security" ]; then
     prefix="security"
