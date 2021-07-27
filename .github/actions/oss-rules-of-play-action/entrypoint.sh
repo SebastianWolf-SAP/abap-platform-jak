@@ -55,17 +55,15 @@ if [ $? -ne 0 ]; then
 fi
 cd ..
 
-if [ "$RATING" == "oss-rules-of-play" ]; then
-    
-    if [ "$DATA_PROVIDER_CONFIG_URLS" == "" ]; then
-        data_provider_config_base_url="https://raw.githubusercontent.com/SebastianWolf-SAP/fosstars-rating-core-action/main/rop-sap-defaults/"
-        data_provider_config_url_array[0]="${data_provider_config_base_url}LicenseInfo.config.yml"
-        data_provider_config_url_array[1]="${data_provider_config_base_url}ContributingGuidelineInfo.config.yml"
-        data_provider_config_url_array[2]="${data_provider_config_base_url}ReadmeInfo.config.yml"
-    else
-        IFS=',' read -ra data_provider_config_url_array <<< "$DATA_PROVIDER_CONFIG_URLS"
-    fi 
+if [ "$DATA_PROVIDER_CONFIG_URLS" == "" ] && [ "$RATING" == "oss-rules-of-play" ]; then
+    data_provider_config_base_url="https://raw.githubusercontent.com/SAP/fosstars-rating-core-action/main/rop-sap-defaults/"
+    $DATA_PROVIDER_CONFIG_URLS="${data_provider_config_base_url}LicenseInfo.config.yml,${data_provider_config_base_url}ContributingGuidelineInfo.config.yml,${data_provider_config_base_url}ReadmeInfo.config.yml"
+fi
 
+if [ "$DATA_PROVIDER_CONFIG_URLS" == "" ]
+    DATA_PROVIDER_CONFIGS=""
+else
+    IFS=',' read -ra data_provider_config_url_array <<< "$DATA_PROVIDER_CONFIG_URLS"
     for config_url in "${data_provider_config_url_array[@]}"
     do
         config_basename=$(basename $config_url)
@@ -75,12 +73,10 @@ if [ "$RATING" == "oss-rules-of-play" ]; then
         fi
         DATA_PROVIDER_CONFIGS="${DATA_PROVIDER_CONFIGS}${config_basename}"
     done
-else
-    DATA_PROVIDER_CONFIG_URLS=""
 fi
 
 # Generate a report
-if [ "$DATA_PROVIDER_CONFIG_URLS" == "" ]; then
+if [ "$DATA_PROVIDER_CONFIGS" == "" ]; then
     java -jar fosstars-rating-core/target/fosstars-github-rating-calc.jar \
           --url $PROJECT_SCM_URL \
           --token $TOKEN \
