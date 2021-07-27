@@ -63,7 +63,7 @@ if [ "$RATING" == "oss-rules-of-play" ]; then
         data_provider_config_url_array[1]="${data_provider_config_base_url}ContributingGuidelineInfo.config.yml"
         data_provider_config_url_array[2]="${data_provider_config_base_url}ReadmeInfo.config.yml"
     else
-        data_provider_config_url_array=', ' read -r -a array <<< "$DATA_PROVIDER_CONFIG_URLS"
+        IFS=',' read -ra data_provider_config_url_array <<< "$DATA_PROVIDER_CONFIG_URLS"
     fi 
 
     for config_url in "${data_provider_config_url_array[@]}"
