@@ -55,12 +55,18 @@ if [ $? -ne 0 ]; then
 fi
 cd ..
 
-if [ "$RATING" == "oss-rules-of-play" ] && [ "$DATA_PROVIDER_CONFIGS" == "" ]; then
-    DATA_PROVIDER_CONFIG_BASE_URL="https://raw.githubusercontent.com/SebastianWolf-SAP/fosstars-rating-core-action/main/rop-sap-defaults/"
-    DATA_PROVIDER_CONFIG_URLS[0]="${DATA_PROVIDER_CONFIG_BASE_URL}LicenseInfo.config.yml"
-    DATA_PROVIDER_CONFIG_URLS[1]="${DATA_PROVIDER_CONFIG_BASE_URL}ContributingGuidelineInfo.config.yml"
-    DATA_PROVIDER_CONFIG_URLS[2]="${DATA_PROVIDER_CONFIG_BASE_URL}ReadmeInfo.config.yml"
-    for config_url in "${DATA_PROVIDER_CONFIG_URLS[@]}"
+if [ "$RATING" == "oss-rules-of-play" ]; then
+    
+    if [ "$DATA_PROVIDER_CONFIG_URLS" == "" ]; then
+        data_provider_config_base_url="https://raw.githubusercontent.com/SAP/fosstars-rating-core-action/main/rop-sap-defaults/"
+        data_provider_config_url_array[0]="${data_provider_config_base_url}LicenseInfo.config.yml"
+        data_provider_config_url_array[1]="${data_provider_config_base_url}ContributingGuidelineInfo.config.yml"
+        data_provider_config_url_array[2]="${data_provider_config_base_url}ReadmeInfo.config.yml"
+    else
+        data_provider_config_url_array=', ' read -r -a array <<< "$DATA_PROVIDER_CONFIG_URLS"
+    fi 
+
+    for config_url in "${data_provider_config_url_array[@]}"
     do
         config_basename=$(basename $config_url)
         wget -O $config_basename $config_url
