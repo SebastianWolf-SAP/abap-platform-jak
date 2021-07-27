@@ -15,3 +15,4 @@ jobs:
           fosstars-version: v1.4.0
           report-branch: fosstars
           token: "${{ secrets.OSPO_GITHUB_TOKEN }}"
+          data-provider-config-urls: https://raw.githubusercontent.com/SebastianWolf-SAP/fosstars-rating-core-action/fosstars-rop/rop-sap-defaults/ReadmeInfo.config.yml,https://raw.githubusercontent.com/SebastianWolf-SAP/fosstars-rating-core-action/fosstars-rop/rop-sap-defaults/ContributingGuidelineInfo.config.yml,https://raw.githubusercontent.com/SebastianWolf-SAP/fosstars-rating-core-action/fosstars-rop/rop-sap-defaults/LicenseInfo.config.yml
