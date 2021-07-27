@@ -58,7 +58,7 @@ cd ..
 if [ "$RATING" == "oss-rules-of-play" ]; then
     
     if [ "$DATA_PROVIDER_CONFIG_URLS" == "" ]; then
-        data_provider_config_base_url="https://raw.githubusercontent.com/SAP/fosstars-rating-core-action/main/rop-sap-defaults/"
+        data_provider_config_base_url="https://raw.githubusercontent.com/SebastianWolf-SAP/fosstars-rating-core-action/main/rop-sap-defaults/"
         data_provider_config_url_array[0]="${data_provider_config_base_url}LicenseInfo.config.yml"
         data_provider_config_url_array[1]="${data_provider_config_base_url}ContributingGuidelineInfo.config.yml"
         data_provider_config_url_array[2]="${data_provider_config_base_url}ReadmeInfo.config.yml"
