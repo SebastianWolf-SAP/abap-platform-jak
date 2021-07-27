@@ -60,7 +60,7 @@ if [ "$DATA_PROVIDER_CONFIG_URLS" == "" ] && [ "$RATING" == "oss-rules-of-play" 
     DATA_PROVIDER_CONFIG_URLS="${data_provider_config_base_url}LicenseInfo.config.yml,${data_provider_config_base_url}ContributingGuidelineInfo.config.yml,${data_provider_config_base_url}ReadmeInfo.config.yml"
 fi
 
-if [ "$DATA_PROVIDER_CONFIG_URLS" == "" ]
+if [ "$DATA_PROVIDER_CONFIG_URLS" == "" ]; then
     DATA_PROVIDER_CONFIGS=""
 else
     IFS=',' read -ra data_provider_config_url_array <<< "$DATA_PROVIDER_CONFIG_URLS"
