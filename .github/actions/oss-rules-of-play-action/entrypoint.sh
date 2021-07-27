@@ -75,10 +75,22 @@ if [ "$RATING" == "oss-rules-of-play" ]; then
         fi
         DATA_PROVIDER_CONFIGS="${DATA_PROVIDER_CONFIGS}${config_basename}"
     done
+else
+    DATA_PROVIDER_CONFIG_URLS=""
 fi
 
 # Generate a report
-java -jar fosstars-rating-core/target/fosstars-github-rating-calc.jar \
+if [ "$DATA_PROVIDER_CONFIG_URLS" == "" ]; then
+    java -jar fosstars-rating-core/target/fosstars-github-rating-calc.jar \
+          --url $PROJECT_SCM_URL \
+          --token $TOKEN \
+          --rating $RATING \
+          --verbose \
+          --report-file $REPORT_FILE \
+          --report-type markdown \
+          --raw-rating-file $RAW_RATING_FILE
+else
+    java -jar fosstars-rating-core/target/fosstars-github-rating-calc.jar \
           --url $PROJECT_SCM_URL \
           --token $TOKEN \
           --rating $RATING \
@@ -87,6 +99,7 @@ java -jar fosstars-rating-core/target/fosstars-github-rating-calc.jar \
           --report-type markdown \
           --raw-rating-file $RAW_RATING_FILE \
           --data-provider-configs $DATA_PROVIDER_CONFIGS
+fi
 
 git add $REPORT_FILE $RAW_RATING_FILE
 
