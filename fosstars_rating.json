@@ -5,7 +5,7 @@
       "type" : "OssRulesOfPlayScore",
       "name" : "Open source rules or play score"
     },
-    "value" : 10.0,
+    "value" : 9.0,
     "weight" : 1.0,
     "confidence" : 10.0,
     "usedValues" : [ {
@@ -46,7 +46,7 @@
         "type" : "BooleanFeature",
         "name" : "If a project's contributing guideline has required text"
       },
-      "flag" : true,
+      "flag" : false,
       "explanation" : [ ]
     }, {
       "type" : "BooleanValue",
@@ -54,8 +54,8 @@
         "type" : "BooleanFeature",
         "name" : "If a project's README doesn't contain required info"
       },
-      "flag" : false,
-      "explanation" : [ ]
+      "flag" : true,
+      "explanation" : [ "The README does not contain required text that should match '# Requirements', '# Download and [Ii]nstallation', '# How to obtain support'" ]
     }, {
       "type" : "BooleanValue",
       "feature" : {
@@ -110,7 +110,7 @@
         "type" : "BooleanFeature",
         "name" : "If a project has a contributing guideline"
       },
-      "flag" : true,
+      "flag" : false,
       "explanation" : [ ]
     }, {
       "type" : "BooleanValue",
@@ -126,8 +126,8 @@
         "type" : "BooleanFeature",
         "name" : "If a project has unresolved vulnerability alerts"
       },
-      "flag" : false,
-      "explanation" : [ ]
+      "flag" : true,
+      "explanation" : [ "The project has unresolved vulnerability alerts" ]
     }, {
       "type" : "BooleanValue",
       "feature" : {
@@ -161,7 +161,7 @@
       "flag" : true,
       "explanation" : [ ]
     } ],
-    "explanation" : [ "No violated rules found." ],
+    "explanation" : [ "Found 4 recommendationss" ],
     "isUnknown" : false,
     "isNotApplicable" : false,
     "feature" : {
@@ -169,5 +169,5 @@
       "name" : "Open source rules or play score"
     }
   },
-  "label" : [ "OssRulesOfPlayRating$OssRulesOfPlayLabel", "PASSED" ]
+  "label" : [ "OssRulesOfPlayRating$OssRulesOfPlayLabel", "PASSED_WITH_WARNING" ]
 }
