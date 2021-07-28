@@ -5,9 +5,9 @@
       "type" : "OssRulesOfPlayScore",
       "name" : "Open source rules or play score"
     },
-    "value" : 9.0,
+    "value" : 0.0,
     "weight" : 1.0,
-    "confidence" : 10.0,
+    "confidence" : 8.947368421052632,
     "usedValues" : [ {
       "type" : "BooleanValue",
       "feature" : {
@@ -46,7 +46,7 @@
         "type" : "BooleanFeature",
         "name" : "If a project's contributing guideline has required text"
       },
-      "flag" : false,
+      "flag" : true,
       "explanation" : [ ]
     }, {
       "type" : "BooleanValue",
@@ -54,16 +54,16 @@
         "type" : "BooleanFeature",
         "name" : "If a project's README doesn't contain required info"
       },
-      "flag" : true,
-      "explanation" : [ "The README does not contain required text that should match '# Requirements', '# Download and [Ii]nstallation', '# How to obtain support'" ]
+      "flag" : false,
+      "explanation" : [ ]
     }, {
       "type" : "BooleanValue",
       "feature" : {
         "type" : "BooleanFeature",
         "name" : "If a project has a license"
       },
-      "flag" : true,
-      "explanation" : [ ]
+      "flag" : false,
+      "explanation" : [ "No license found in the project" ]
     }, {
       "type" : "BooleanValue",
       "feature" : {
@@ -86,8 +86,8 @@
         "type" : "BooleanFeature",
         "name" : "If a project has enough admins on GitHub"
       },
-      "flag" : true,
-      "explanation" : [ ]
+      "flag" : false,
+      "explanation" : [ "The project should have at least \n admins" ]
     }, {
       "type" : "BooleanValue",
       "feature" : {
@@ -110,15 +110,14 @@
         "type" : "BooleanFeature",
         "name" : "If a project has a contributing guideline"
       },
-      "flag" : false,
+      "flag" : true,
       "explanation" : [ ]
     }, {
-      "type" : "BooleanValue",
+      "type" : "UnknownValue",
       "feature" : {
         "type" : "BooleanFeature",
         "name" : "If a license has disallowed text"
       },
-      "flag" : false,
       "explanation" : [ ]
     }, {
       "type" : "BooleanValue",
@@ -126,15 +125,14 @@
         "type" : "BooleanFeature",
         "name" : "If a project has unresolved vulnerability alerts"
       },
-      "flag" : true,
-      "explanation" : [ "The project has unresolved vulnerability alerts" ]
+      "flag" : false,
+      "explanation" : [ ]
     }, {
-      "type" : "BooleanValue",
+      "type" : "UnknownValue",
       "feature" : {
         "type" : "BooleanFeature",
         "name" : "If a project uses an allowed license"
       },
-      "flag" : true,
       "explanation" : [ ]
     }, {
       "type" : "BooleanValue",
@@ -161,7 +159,7 @@
       "flag" : true,
       "explanation" : [ ]
     } ],
-    "explanation" : [ "Found 4 recommendationss" ],
+    "explanation" : [ "Found 2 violated rules" ],
     "isUnknown" : false,
     "isNotApplicable" : false,
     "feature" : {
@@ -169,5 +167,5 @@
       "name" : "Open source rules or play score"
     }
   },
-  "label" : [ "OssRulesOfPlayRating$OssRulesOfPlayLabel", "PASSED_WITH_WARNING" ]
+  "label" : [ "OssRulesOfPlayRating$OssRulesOfPlayLabel", "FAILED" ]
 }
