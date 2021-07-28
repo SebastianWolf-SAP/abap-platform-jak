@@ -116,7 +116,7 @@ case "${badge_prefix}-${label}" in
         ;;
 esac
 
-wget -O $BADGE_FILE https://raw.githubusercontent.com/SebastianWolf-SAP/fosstars-rating-core-action/main/images/$prefix-fosstars-$suffix.svg
+wget -O $BADGE_FILE https://raw.githubusercontent.com/SebastianWolf-SAP/fosstars-rating-core-action/main/images/${badge_prefix}-fosstars-$suffix.svg
 git add $BADGE_FILE
 
 # Commit the report and the badge
