@@ -45,7 +45,7 @@ if [ "$BADGE_FILE" = "" ]; then
 fi
 
 #PROJECT_SCM_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY
-PROJECT_SCM_URL=https://github.com/SAP/stewardci-log-forwarding
+PROJECT_SCM_URL=https://github.com/SAP/openSAP-ui5-course
 RAW_RATING_FILE="fosstars_rating.json"
 
 # Switch to the branch where the report should be stored
