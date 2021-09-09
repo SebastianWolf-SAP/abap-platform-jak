@@ -1,6 +1,6 @@
 **Rating**: **BAD**
 
-**Score**: **1.74**, max score value is 10.0
+**Score**: **2.0**, max score value is 10.0
 
 **Confidence**: High (9.87, max confidence value is 10.0)
 
@@ -26,7 +26,7 @@ It used the following sub-scores:
         1.  **[FindSecBugs score](#findsecbugs-score)**: **N/A** (weight is 0.5)
     1.  **[nohttp tool](#nohttp-tool)**: **0.0** (weight is 0.2)
 1.  **[Security awareness](#security-awareness)**: **0.5** (weight is 0.9)
-1.  **[Vulnerability discovery and security testing](#vulnerability-discovery-and-security-testing)**: **0.0** (weight is 0.6)
+1.  **[Vulnerability discovery and security testing](#vulnerability-discovery-and-security-testing)**: **2.0** (weight is 0.6)
     1.  **[Security testing](#security-testing)**: **0.0** (weight is 1.0)
         1.  **[Dependency testing](#dependency-testing)**: **N/A** (weight is 1.0)
             1.  **[Dependabot score](#dependabot-score)**: **N/A** (weight is 1.0)
@@ -128,7 +128,7 @@ This sub-score is based on 17 features:
 
 ### Vulnerability discovery and security testing
 
-Score: **0.0**, confidence is 9.76 (high), weight is 0.6 (medium)
+Score: **2.0**, confidence is 9.76 (high), weight is 0.6 (medium)
 
 The scores checks how security testing is done and how many vulnerabilities were recently discovered. If testing is good, and there are no recent vulnerabilities, then the score value is max. If there are vulnerabilities, then the score value is high. If testing is bad, and there are no recent vulnerabilities, then the score value is low. If there are vulnerabilities, then the score is min.
 

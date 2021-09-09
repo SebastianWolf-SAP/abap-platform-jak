@@ -202,7 +202,7 @@
         }
       }
     },
-    "value" : 1.7438625204582654,
+    "value" : 1.9991816693944355,
     "weight" : 1.0,
     "confidence" : 9.868287740628167,
     "usedValues" : [ {
@@ -1526,7 +1526,7 @@
         },
         "name" : "Assesses security testing and vulnerability discovery"
       },
-      "value" : 0.0,
+      "value" : 2.0,
       "weight" : 0.6,
       "confidence" : 9.761904761904763,
       "usedValues" : [ {
