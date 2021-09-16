@@ -5,7 +5,6 @@
 ## Violated rules
 1.   Are vulnerability alerts enabled? **No**
 1.   Does it have a license file? **No**
-1.   Does it have a security policy? **No**
 1.   Does README mention REUSE? **No**
 1.   Is it registered in REUSE? **No**
 1.   Is it compliant with REUSE rules? **No**
@@ -30,6 +29,7 @@
 ## Passed rules
 1.   Does it have a README file? **Yes**
 1.   Does it have LICENSES directory with licenses? **Yes**
+1.   Does it have a security policy? **Yes**
 1.   Does it have unresolved vulnerability alerts? **No**
 
 

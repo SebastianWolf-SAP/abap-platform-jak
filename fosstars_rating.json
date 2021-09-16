@@ -90,8 +90,8 @@
         "type" : "BooleanFeature",
         "name" : "If an open-source project has a security policy"
       },
-      "flag" : false,
-      "explanation" : [ "Neither the project nor organization has a security policy" ]
+      "flag" : true,
+      "explanation" : [ ]
     }, {
       "type" : "UnknownValue",
       "feature" : {
@@ -154,7 +154,7 @@
       "flag" : false,
       "explanation" : [ "The project is not registered in REUSE" ]
     } ],
-    "explanation" : [ "Found 6 violated rules" ],
+    "explanation" : [ "Found 5 violated rules" ],
     "isUnknown" : false,
     "isNotApplicable" : false,
     "feature" : {
