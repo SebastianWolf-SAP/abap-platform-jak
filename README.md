@@ -1,6 +1,6 @@
 **Rating**: **BAD**
 
-**Score**: **2.0**, max score value is 10.0
+**Score**: **2.38**, max score value is 10.0
 
 **Confidence**: High (9.87, max confidence value is 10.0)
 
@@ -25,7 +25,7 @@ It used the following sub-scores:
         1.  **[How a project uses CodeQL](#how-a-project-uses-codeql)**: **N/A** (weight is 1.0)
         1.  **[FindSecBugs score](#findsecbugs-score)**: **N/A** (weight is 0.5)
     1.  **[nohttp tool](#nohttp-tool)**: **0.0** (weight is 0.2)
-1.  **[Security awareness](#security-awareness)**: **0.5** (weight is 0.9)
+1.  **[Security awareness](#security-awareness)**: **2.5** (weight is 0.9)
 1.  **[Vulnerability discovery and security testing](#vulnerability-discovery-and-security-testing)**: **2.0** (weight is 0.6)
     1.  **[Security testing](#security-testing)**: **0.0** (weight is 1.0)
         1.  **[Dependency testing](#dependency-testing)**: **N/A** (weight is 1.0)
@@ -56,18 +56,13 @@ It used the following sub-scores:
 3.  You can open a pull request to enable CodeQL scans in the project.
     More info:
     1.  [How to enable CodeQL checks](https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/enabling-code-scanning-for-a-repository#enabling-code-scanning-using-actions)
-4.  You can open a pull request to add a security policy for the project.
-    More info:
-    1.  [About adding a security policy to a repository on GitHub](https://docs.github.com/en/free-pro-team@latest/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
-    2.  [An example of a security policy](https://github.com/apache/nifi/blob/main/SECURITY.md)
-    3.  [Suggest a security policy for the project](https://github.com/SebastianWolf-SAP/abap-platform-jak/security/policy)
-5.  You can open a pull request to enable FindSecBugs for the project.
+4.  You can open a pull request to enable FindSecBugs for the project.
     More info:
     1.  [FindSecBugs home page](https://find-sec-bugs.github.io/)
-6.  You can enable artifact signing in the project's build pipeline.
+5.  You can enable artifact signing in the project's build pipeline.
     More info:
     1.  [Apache Maven Jarsigner Plugin](https://maven.apache.org/plugins/maven-jarsigner-plugin/)
-7.  You can enable NoHttp tool in the project's build pipeline.
+6.  You can enable NoHttp tool in the project's build pipeline.
     More info:
     1.  [NoHttp tool home page](https://github.com/spring-io/nohttp)
 
@@ -100,7 +95,7 @@ This sub-score is based on the following sub-scores:
 
 ### Security awareness
 
-Score: **0.5**, confidence is 10.0 (max), weight is 0.9 (high)
+Score: **2.5**, confidence is 10.0 (max), weight is 0.9 (high)
 
 The score shows how a project is aware of security. If the project has a security policy, then the score adds 2.00. If the project has a security team, then the score adds 3.00. If the project uses verified signed commits, then the score adds 0.50. If the project has a bug bounty program, then the score adds 4.00. If the project signs its artifacts, then the score adds 0.50. If the project uses a security tool or library, then the score adds 1.00.
 
@@ -109,7 +104,7 @@ The score shows how a project is aware of security. If the project has a securit
 This sub-score is based on 17 features:
 
 1.  Does it have a bug bounty program? **No**
-1.  Does it have a security policy? **No**
+1.  Does it have a security policy? **Yes**
 1.  Does it have a security team? **No**
 1.  Does it sign artifacts? **No**
 1.  Does it use AddressSanitizer? **No**

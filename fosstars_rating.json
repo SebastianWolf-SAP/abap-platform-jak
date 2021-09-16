@@ -202,7 +202,7 @@
         }
       }
     },
-    "value" : 1.9991816693944355,
+    "value" : 2.3821603927986907,
     "weight" : 1.0,
     "confidence" : 9.868287740628167,
     "usedValues" : [ {
@@ -211,7 +211,7 @@
         "type" : "ProjectSecurityAwarenessScore",
         "name" : "How well open-source community is aware about security"
       },
-      "value" : 0.5,
+      "value" : 2.5,
       "weight" : 0.9,
       "confidence" : 10.0,
       "usedValues" : [ {
@@ -220,8 +220,8 @@
           "type" : "BooleanFeature",
           "name" : "If an open-source project has a security policy"
         },
-        "flag" : false,
-        "explanation" : [ "Neither the project nor organization has a security policy" ]
+        "flag" : true,
+        "explanation" : [ ]
       }, {
         "type" : "BooleanValue",
         "feature" : {
